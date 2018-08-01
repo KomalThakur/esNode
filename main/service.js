@@ -48,8 +48,8 @@ async function getUniqueSessions(request) {
     })
 
     console.log("response : ", response);
-    console.log("response parsed: ", JSON.parse(response)['aggregations']['distinct_ids']['value']);
-    return JSON.parse(response)['aggregations']['distinct_ids']['value'];
+    console.log("response parsed: ", response.aggregations.distinct_ids.value);
+    return response.aggregations.distinct_ids.value;
 }
 
 module.exports = {
