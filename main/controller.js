@@ -8,7 +8,7 @@ async function getUniqueSessions(req, res, next) {
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 		
 		console.log("controller sessions : ", sessions);
-		res.status(200).send(sessions);
+		res.status(200).send(sessions.toString());
 
 	} catch (error) {
 		next(error);
