@@ -6,7 +6,7 @@ async function getUniqueSessions(req, res, next) {
 		const sessions = await esService.getUniqueSessions(req);
 		res.header("Access-Control-Allow-Origin", "*");
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		res.sendStatus(200);
+		//res.sendStatus(200);
 		res.send(sessions);
 
 	} catch (error) {
