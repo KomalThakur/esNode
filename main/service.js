@@ -46,7 +46,10 @@ async function getUniqueSessions(request) {
         index: esConfig.index,
         body: query
     })
-    return JSON.parse(response['aggregations']['distinct_ids']['value']);
+
+    console.log("response : ", response);
+    console.log("response parsed: ", JSON.parse(response)['aggregations']['distinct_ids']['value']);
+    return JSON.parse(response)['aggregations']['distinct_ids']['value'];
 }
 
 module.exports = {
