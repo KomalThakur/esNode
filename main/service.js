@@ -12,7 +12,7 @@ var client = new elasticsearch.Client({
 
 
 async function getUniqueSessions(request) {
-
+    console.log("query params : ", request.query);
     const query = {
         "size": 0,
         "aggs": {
