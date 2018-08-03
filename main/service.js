@@ -35,9 +35,7 @@ async function getUniqueSessions(request) {
     if (!_.isEmpty(start_date) && !_.isEmpty(end_date))
         query_array.push(helper.buildRangeQueryTemplate(start_date, end_date))
     if (!_.isEmpty(query_array)) {
-        query['query'] = helper.buildBoolQuery(
-            query_array
-        );
+        query['query'] = helper.buildBoolQuery(query_array);
     }
 
     console.log("query : ", query);
