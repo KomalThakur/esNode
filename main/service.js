@@ -224,7 +224,7 @@ async function getBotSuccessRate (request) {
         }
       }
     }
-  }
+  };
   const botname = request.query.botname || ''
   const last_updated = request.query.last_updated || ''
   const start_date = request.query.start_date || ''
@@ -250,9 +250,12 @@ async function getBotSuccessRate (request) {
     body: query
   })
 
-  console.log('response : ', response);
-  console.log('response parsed: ', response['aggregations']['result']['buckets'][0]['successpercentage']['value']);
-  return response['aggregations']['result']['buckets'][0]['successpercentage']['value'];
+  console.log('response : ', response)
+  console.log(
+    'response parsed: ',
+    response.aggregations.result.buckets[0]['successpercentage']['value']
+  );
+  return response.aggregations.result.buckets[0]['successpercentage']['value'];
 }
 
 module.exports = {
