@@ -425,7 +425,7 @@ async function getMedianMessages (request) {
       median: {
         percentiles_bucket: {
           buckets_path: 'sessions>messageCount',
-          percents: [25.0, 50.0, 75.0, 100.0]
+          percents: [50.0]
         }
       },
       avg_val: {
@@ -461,8 +461,8 @@ async function getMedianMessages (request) {
   })
 
   console.log('response : ', response);
-  console.log('response parsed: ', response.aggregations.monthly.buckets);
-  return response.aggregations.monthly.buckets;
+  console.log('response parsed: ', response.aggregations.median["50.0"]);
+  return response.aggregations.median["50.0"];
 }
 
 async function getTimeBasedMedianMessages (request) {
@@ -534,8 +534,8 @@ async function getTimeBasedMedianMessages (request) {
   })
 
   console.log('response : ', response);
-  console.log('response parsed: ', response.aggregations.median.values['50.0']);
-  return response.aggregations.median.values['50.0'];
+  console.log('response parsed: ', response.aggregations.monthly.buckets[0].median.values['50.0']);
+  return response.aggregations.monthly.buckets[0].median.values['50.0'];
 }
 
 async function getUserInteraction (request) {

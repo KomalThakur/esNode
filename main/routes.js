@@ -12,8 +12,8 @@ router.get('/bot_success_rate', esController.getBotSuccessRate); //error-script
 router.get('/time_based_average_inbound_messages', esController.getTimeBasedAverageInboundMessages);
 router.get('/average_inbound_messages', esController.getAverageInboundMessages);
 
-router.get('/median_messages', esController.getMedianMessages); //error - buckets not found
-router.get('/time_based_median_messages', esController.getTimeBasedMedianMessages); //error -cannot read value of undefined
+router.get('/median_messages', esController.getMedianMessages);
+router.get('/time_based_median_messages', esController.getTimeBasedMedianMessages); 
 
 router.get('/user_interaction', esController.getUserInteraction);
 router.get('/time_based_user_interaction', esController.getTimeBasedUserInteraction);
