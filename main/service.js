@@ -461,7 +461,7 @@ async function getMedianMessages (request) {
   })
 
   console.log('response : ', response);
-  console.log('response parsed: ', response.aggregations.median["50.0"]);
+  console.log('response parsed: ', response.aggregations.median.values["50.0"]);
   return response.aggregations.median["50.0"];
 }
 
