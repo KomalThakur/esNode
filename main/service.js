@@ -103,8 +103,8 @@ async function getTimeBasedUniqueSessions (request) {
 }
 
 async function getTimeBasedBotSuccessRate (request) {
-  console.log('inside getTimeBasedBotSuccessRate, query params : ', request.query)
-  const interval = request.query.interval || 'day'
+  console.log('inside getTimeBasedBotSuccessRate, query params : ', request.query);
+  const interval = request.query.interval || 'day';
   const query = {
     size: 0,
     aggs: {
@@ -178,9 +178,9 @@ async function getTimeBasedBotSuccessRate (request) {
     body: query
   })
 
-  console.log('response : ', response)
-  console.log('response parsed: ', response.aggregations.monthly.buckets)
-  return response.aggregations.monthly.buckets
+  console.log('response : ', response);
+  console.log('response parsed: ', response.aggregations.monthly.buckets);
+  return response.aggregations.monthly.buckets;
 }
 
 async function getBotSuccessRate (request) {
@@ -332,7 +332,7 @@ async function getTimeBasedAverageInboundMessages (request) {
 }
 
 async function getAverageInboundMessages (request) {
-  console.log('query params : ', request.query)
+  console.log('inside getAverageInboundMessages, query params : ', request.query);
   const query = {
     size: 0,
     _source: {
@@ -393,13 +393,13 @@ async function getAverageInboundMessages (request) {
     body: query
   })
 
-  console.log('response : ', response)
-  console.log('response parsed: ', response.aggregations.avg_val.value)
-  return response.aggregations.avg_val.value
+  console.log('response : ', response);
+  console.log('response parsed: ', response.aggregations.avg_val.value);
+  return response.aggregations.avg_val.value;
 }
 
 async function getMedianMessages (request) {
-  console.log('query params : ', request.query)
+  console.log('inside getMedianMessages, query params : ', request.query);
   const query = {
     size: 0,
     _source: {
@@ -460,14 +460,14 @@ async function getMedianMessages (request) {
     body: query
   })
 
-  console.log('response : ', response)
-  console.log('response parsed: ', response.aggregations.monthly.buckets)
-  return response.aggregations.monthly.buckets
+  console.log('response : ', response);
+  console.log('response parsed: ', response.aggregations.monthly.buckets);
+  return response.aggregations.monthly.buckets;
 }
 
 async function getTimeBasedMedianMessages (request) {
-  console.log('query params : ', request.query)
-  const interval = request.query.interval || 'day'
+  console.log('inside getTimeBasedMedianMessages, query params : ', request.query);
+  const interval = request.query.interval || 'day';
   const query = {
     size: 0,
     aggs: {
@@ -533,13 +533,13 @@ async function getTimeBasedMedianMessages (request) {
     body: query
   })
 
-  console.log('response : ', response)
-  console.log('response parsed: ', response.aggregations.median.values['50.0'])
-  return response.aggregations.median.values['50.0']
+  console.log('response : ', response);
+  console.log('response parsed: ', response.aggregations.median.values['50.0']);
+  return response.aggregations.median.values['50.0'];
 }
 
 async function getUserInteraction (request) {
-  console.log('query params : ', request.query)
+  console.log('inside getUserInteraction, query params : ', request.query);
   const query = {
     _source: ['replyHistory.raw', 'session_id'],
     query: {
@@ -636,7 +636,7 @@ async function getUserInteraction (request) {
 }
 
 async function getTimeBasedUserInteraction (request) {
-  console.log('query params : ', request.query)
+  console.log('inside getTimeBasedUserInteraction, query params : ', request.query)
   const query = {
     _source: ['replyHistory.raw', 'session_id'],
     query: {
@@ -728,7 +728,7 @@ async function getTimeBasedUserInteraction (request) {
     body: query
   })
 
-  console.log('response : ', response)
+  console.log('response : ', response);
   return response
 }
 

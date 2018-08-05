@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 const esController = require('./controller');
 
-router.get('/unique_sessions', esController.getUniqueSessions);
+router.get('/unique_session', esController.getUniqueSessions);
 router.get('/time_based_unique_session', esController.getTimeBasedUniqueSessions);
 
 router.get('/time_based_bot_success_rate', esController.getTimeBasedBotSuccessRate);
-router.get('/bot_success_rate', esController.getBotSuccessRate);
+router.get('/bot_success_rate', esController.getBotSuccessRate); //error
 
 router.get('/time_based_average_inbound_messages', esController.getTimeBasedAverageInboundMessages);
 router.get('/average_inbound_messages', esController.getAverageInboundMessages);
