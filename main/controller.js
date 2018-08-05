@@ -165,21 +165,6 @@ async function getMissedIntents(req, res, next) {
 	}
 }
 
-async function getMissedIntents(req, res, next) {
-	try {
-		
-		const missed_intents = await esService.getMissedIntents(req);
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		
-		console.log("controller sessions : ", missed_intents);
-		res.status(200).send(missed_intents.toString());
-
-	} catch (error) {
-		next(error);
-	}
-}
-
 async function getTimeBasedMissedIntents(req, res, next) {
 	try {
 		

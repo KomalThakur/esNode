@@ -733,7 +733,7 @@ async function getTimeBasedUserInteraction (request) {
 }
 
 async function getMissedIntents (request) {
-  console.log('query params : ', request.query)
+  console.log('inside getMissedIntents, query params : ', request.query);
   const query = {
     size: 0,
     aggs: {
@@ -778,17 +778,17 @@ async function getMissedIntents (request) {
     body: query
   })
 
-  console.log('response : ', response)
+  console.log('response : ', response);
   console.log(
     'response parsed : ',
     response['aggregations']['moduleCount']['missedIntents']['value']
-  )
-  return response['aggregations']['moduleCount']['missedIntents']['value']
+  );
+  return response['aggregations']['moduleCount']['missedIntents']['value'];
 }
 
 async function getTimeBasedMissedIntents (request) {
-  console.log('query params : ', request.query)
-  const interval = request.query.interval || 'day'
+  console.log('inside getTimeBasedMissedIntents, query params : ', request.query);
+  const interval = request.query.interval || 'day';
   const query = {
     size: 0,
     aggs: {
@@ -847,7 +847,7 @@ async function getTimeBasedMissedIntents (request) {
 }
 
 async function getMostUsedModules (request) {
-  console.log('query params : ', request.query)
+  console.log('inside  getMostUsedModules, query params : ', request.query);
   const query = {
     size: 0,
     _source: ['moduleNickName'],
@@ -884,14 +884,14 @@ async function getMostUsedModules (request) {
     body: query
   })
 
-  console.log('response : ', response)
-  console.log('response parsed : ', response.aggregations.monthly.buckets)
-  return response.aggregations.monthly.buckets
+  console.log('response : ', response);
+  console.log('response parsed : ', response.aggregations.monthly.buckets);
+  return response.aggregations.monthly.buckets;
 }
 
 async function getTimeBasedMostUsedModules (request) {
-  console.log('query params : ', request.query)
-  const interval = request.query.interval || 'day'
+  console.log('inside getTimeBasedMostUsedModules, query params : ', request.query);
+  const interval = request.query.interval || 'day';
   const query = {
     size: 0,
     aggs: {
@@ -935,9 +935,9 @@ async function getTimeBasedMostUsedModules (request) {
     body: query
   })
 
-  console.log('response : ', response)
-  console.log('response parsed: ', response.aggregations.monthly.buckets)
-  return response.aggregations.monthly.buckets
+  console.log('response : ', response);
+  console.log('response parsed: ', response.aggregations.monthly.buckets);
+  return response.aggregations.monthly.buckets;
 }
 
 module.exports = {
