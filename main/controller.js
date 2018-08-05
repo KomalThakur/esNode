@@ -98,7 +98,7 @@ async function getMedianMessages(req, res, next) {
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 		
 		console.log("controller sessions : ", median_messages);
-		res.status(200).send(JSON.stringify(median_messages));
+		res.status(200).send(median_messages.toString());
 
 	} catch (error) {
 		next(error);
@@ -113,7 +113,7 @@ async function getTimeBasedMedianMessages(req, res, next) {
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 		
 		console.log("controller sessions : ", median_messages);
-		res.status(200).send(JSON.stringify(median_messages));
+		res.status(200).send(median_messages.toString());
 
 	} catch (error) {
 		next(error);
