@@ -885,8 +885,8 @@ async function getMostUsedModules (request) {
   })
 
   console.log('response : ', response);
-  console.log('response parsed : ', response.aggregations.monthly.buckets);
-  return response.aggregations.monthly.buckets;
+  console.log('response parsed : ', response.aggregations.module.buckets);
+  return response.aggregations.module.buckets;
 }
 
 async function getTimeBasedMostUsedModules (request) {
